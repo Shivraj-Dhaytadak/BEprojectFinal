@@ -48,7 +48,7 @@ def userLog():
             session['Logged_in'] = email_found['email']
             message = 'Logged In As ' + new_email
             return render_template('userDashboard.html', email=new_email, message=message)
-    return render_template('userLogin.html')
+    return render_template('userLogin.html', message='')
 
 
 @app.route('/userDashboard')
