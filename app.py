@@ -20,7 +20,7 @@ LoanApplication = db.LoanApplication
 @app.route("/", methods=['post', 'get'])
 def userLog():
     message = ''
-    if request.method == "POST":
+    if request.method == "POST" and 'user[username]' in request.form and 'user[email]' in request.form:
         user = request.form.get("user[username]")
         email = request.form.get("user[email]")
 
